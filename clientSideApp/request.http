@@ -1,0 +1,95 @@
+
+POST http://localhost:8090/jws/ws/atm HTTP/1.1
+Content-Type: text/xml
+
+<soap:Envelope
+    xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+    
+    xmlns:jet="http://services.web.jets.iti.gov/">
+
+    <soap:Body>
+        <jet:checkIfUserIsValid>
+            <arg0>123456789</arg0>
+            <arg1>1234</arg1>
+        
+        </jet:checkIfUserIsValid>
+    </soap:Body>
+</soap:Envelope>
+
+###
+
+POST http://localhost:8090/jws/ws/atm HTTP/1.1
+Content-Type: text/xml
+
+<soap:Envelope
+    xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+    
+    xmlns:jet="http://services.web.jets.iti.gov/">
+
+    <soap:Body>
+        <jet:getClientData>
+            <arg0>987654321</arg0>
+            <arg1>1234</arg1>
+        
+        </jet:getClientData>
+    </soap:Body>
+</soap:Envelope>
+
+###
+
+POST http://localhost:8090/jws/ws/atm HTTP/1.1
+Content-Type: text/xml
+
+<soap:Envelope
+    xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+    
+    xmlns:jet="http://services.web.jets.iti.gov/">
+
+    <soap:Body>
+        <jet:deposite>
+            <arg0>1000</arg0>
+            <arg1>123456789</arg1>
+        
+        </jet:deposite>
+    </soap:Body>
+</soap:Envelope>
+
+
+###
+
+POST http://localhost:8090/jws/ws/atm HTTP/1.1
+Content-Type: text/xml
+
+<soap:Envelope
+    xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+    
+    xmlns:jet="http://services.web.jets.iti.gov/">
+
+    <soap:Body>
+        <jet:withdraw>
+            <arg0>1000</arg0>
+            <arg1>123456789</arg1>
+        
+        </jet:withdraw>
+    </soap:Body>
+</soap:Envelope>
+
+###
+
+POST http://localhost:8090/jws/ws/atm HTTP/1.1
+Content-Type: text/xml
+
+<soap:Envelope
+    xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+    
+    xmlns:jet="http://services.web.jets.iti.gov/">
+
+    <soap:Body>
+        <jet:transaction>
+            <arg0>1000</arg0>
+            <arg1>123456789</arg1>
+            <arg2>987654321</arg2>
+        
+        </jet:transaction>
+    </soap:Body>
+</soap:Envelope>

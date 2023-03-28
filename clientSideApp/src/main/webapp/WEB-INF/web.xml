@@ -1,0 +1,44 @@
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+    version="5.0"
+    metadata-complete="true">
+
+    <servlet>
+        <servlet-name>LoginPage</servlet-name>
+        <servlet-class>gov.iti.jets.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginPage</servlet-name>
+        <url-pattern>/LoginPage</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DepositPage</servlet-name>
+        <servlet-class>gov.iti.jets.servlet.DepositServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DepositPage</servlet-name>
+        <url-pattern>/DepositPage</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>WithdrawPage</servlet-name>
+        <servlet-class>gov.iti.jets.servlet.WithdrawServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WithdrawPage</servlet-name>
+        <url-pattern>/WithdrawPage</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Transaction</servlet-name>
+        <servlet-class>gov.iti.jets.servlet.TransactionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Transaction</servlet-name>
+        <url-pattern>/Transaction</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
