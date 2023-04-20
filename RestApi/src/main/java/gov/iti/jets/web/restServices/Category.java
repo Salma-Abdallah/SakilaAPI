@@ -1,13 +1,12 @@
-package gov.iti.jets.web.soapServices;
+package gov.iti.jets.web.restServices;
 
 import gov.iti.jets.web.dto.CategoryDto;
 import gov.iti.jets.web.dto.FilmDto;
 import gov.iti.jets.web.services.CategoryService;
-import jakarta.jws.WebService;
 
 import java.util.List;
 
-@WebService
+
 public class Category {
     private CategoryService categoryService;
 

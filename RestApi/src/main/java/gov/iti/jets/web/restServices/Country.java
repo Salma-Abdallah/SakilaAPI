@@ -1,12 +1,12 @@
-package gov.iti.jets.web.soapServices;
+package gov.iti.jets.web.restServices;
 
 import gov.iti.jets.web.dto.CountryDto;
 import gov.iti.jets.web.services.CountryService;
-import jakarta.jws.WebService;
+
 
 import java.util.List;
 
-@WebService
+
 public class Country {
     private CountryService countryService;
 

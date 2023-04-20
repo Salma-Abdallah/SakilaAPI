@@ -1,12 +1,11 @@
-package gov.iti.jets.web.soapServices;
+package gov.iti.jets.web.restServices;
 
 import gov.iti.jets.web.dto.CityDto;
 import gov.iti.jets.web.services.CityService;
-import jakarta.jws.WebService;
 
 import java.util.List;
 
-@WebService
+
 public class City {
     private CityService cityService;
 

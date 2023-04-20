@@ -1,12 +1,11 @@
-package gov.iti.jets.web.soapServices;
+package gov.iti.jets.web.restServices;
 
 import gov.iti.jets.web.dto.*;
 import gov.iti.jets.web.services.CustomerServices;
-import jakarta.jws.WebService;
 
 import java.util.List;
 
-@WebService
+
 public class Customer {
     private CustomerServices customerServices;
 
