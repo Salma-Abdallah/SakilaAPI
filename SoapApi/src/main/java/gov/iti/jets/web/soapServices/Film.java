@@ -6,6 +6,8 @@ import gov.iti.jets.web.dto.FilmDto;
 import gov.iti.jets.web.dto.StoreDto;
 import gov.iti.jets.web.persistence.entity.Language;
 import gov.iti.jets.web.services.FilmService;
+import jakarta.jws.WebParam;
+import jakarta.jws.WebResult;
 import jakarta.jws.WebService;
 
 import java.util.List;
@@ -18,39 +20,46 @@ public class Film {
         filmService= new FilmService();
     }
 
+    @WebResult(name="Films")
     public List<FilmDto> getAllFilms() {
         return filmService.getAllFilms();
     }
 
-    public FilmDto getFilmById(int id) {
+    @WebResult(name="Film")
+    public FilmDto getFilmById(@WebParam(name = "id") int id) {
         return filmService.getFilmById(id);
     }
 
-    public void add(FilmDto filmDto) {
+    public void add(@WebParam(name = "Film") FilmDto filmDto) {
         filmService.add(filmDto);
     }
 
-    public void update(FilmDto filmDto) {
+    public void update(@WebParam(name = "Film")FilmDto filmDto) {
         filmService.update(filmDto);
     }
 
-    public List<ActorDto> getFilmActorsById(int id) {
+    @WebResult(name="Actors")
+    public List<ActorDto> getFilmActorsById(@WebParam(name = "id") int id) {
         return filmService.getFilmActorsById(id);
     }
 
-    public List<CategoryDto> getFilmCategoryById(int id) {
+    @WebResult(name="Categories")
+    public List<CategoryDto> getFilmCategoryById(@WebParam(name = "id") int id) {
         return filmService.getFilmCategoryById(id);
     }
 
-    public List<StoreDto> getFilmStores(int id) {
+    @WebResult(name="Stores")
+    public List<StoreDto> getFilmStores(@WebParam(name = "id") int id) {
         return filmService.getFilmStores(id);
     }
 
-    public Language getFilmLanguagebyId(int id) {
+    @WebResult(name="Language")
+    public Language getFilmLanguageById(@WebParam(name = "id") int id) {
         return filmService.getFilmLanguagebyId(id);
     }
 
-    public Long getNumberOfFilmsInInventory(int id) {
+    @WebResult(name="NumberOfFilms")
+    public Long getNumberOfFilmsInInventory(@WebParam(name = "id") int id) {
         return filmService.getNumberOfFilmsInInventory(id);
     }
 }

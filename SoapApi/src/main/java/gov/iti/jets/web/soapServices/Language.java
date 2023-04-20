@@ -3,6 +3,8 @@ package gov.iti.jets.web.soapServices;
 
 import gov.iti.jets.web.dto.LanguageDto;
 import gov.iti.jets.web.services.LanguageService;
+import jakarta.jws.WebParam;
+import jakarta.jws.WebResult;
 import jakarta.jws.WebService;
 
 import java.util.List;
@@ -14,15 +16,19 @@ public class Language {
     public Language() {
         languageService = new LanguageService();
     }
+
+    @WebResult(name = "Languages")
     public List<LanguageDto> getAllLanguages() {
         return languageService.getAllLanguages();
     }
 
-    public LanguageDto getLanguageById(int id) {
+    @WebResult(name = "Language")
+    public LanguageDto getLanguageById(@WebParam(name = "id") int id) {
         return languageService.getLanguageById(id);
     }
 
-    public LanguageDto getFilmLanguageById(int id) {
+    @WebResult(name = "Language")
+    public LanguageDto getFilmLanguageById(@WebParam(name = "id") int id) {
         return languageService.getFilmLanguageById(id);
     }
 }

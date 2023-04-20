@@ -5,6 +5,8 @@ import gov.iti.jets.web.dto.InventoryDto;
 import gov.iti.jets.web.dto.StoreDto;
 import gov.iti.jets.web.dto.rental.RentalInventoryDto;
 import gov.iti.jets.web.services.InventoryService;
+import jakarta.jws.WebParam;
+import jakarta.jws.WebResult;
 import jakarta.jws.WebService;
 
 import java.util.List;
@@ -17,27 +19,31 @@ public class Inventory {
         inventoryService = new InventoryService();
     }
 
+    @WebResult(name = "inventories")
     public List<InventoryDto> getAllInventories() {
         return inventoryService.getAllInventories();
     }
 
-    public RentalInventoryDto getInventoryById(int id) {
+    @WebResult(name = "inventory")
+    public RentalInventoryDto getInventoryById(@WebParam(name = "id") int id) {
         return inventoryService.getInventoryById(id);
     }
 
-    public void addPayment(InventoryDto inventoryDto) {
+    public void addPayment(@WebParam(name = "inventory") InventoryDto inventoryDto) {
         inventoryService.addPayment(inventoryDto);
     }
 
-    public void updatePayment(InventoryDto inventoryDto) {
+    public void updatePayment(@WebParam(name = "inventory") InventoryDto inventoryDto) {
         inventoryService.updatePayment(inventoryDto);
     }
 
-    public FilmDto getFilmByInventoryId(int id) {
+    @WebResult(name = "Film")
+    public FilmDto getFilmByInventoryId(@WebParam(name = "id") int id) {
         return inventoryService.getFilmByInventoryId(id);
     }
 
-    public StoreDto getStoreByInventoryId(int id) {
+    @WebResult(name = "Store")
+    public StoreDto getStoreByInventoryId(@WebParam(name = "id") int id) {
         return inventoryService.getStoreByInventoryId(id);
     }
 }

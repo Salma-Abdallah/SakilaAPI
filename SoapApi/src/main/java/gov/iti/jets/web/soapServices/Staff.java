@@ -3,6 +3,8 @@ package gov.iti.jets.web.soapServices;
 import gov.iti.jets.web.dto.AddressDto;
 import gov.iti.jets.web.dto.StaffDto;
 import gov.iti.jets.web.services.StaffService;
+import jakarta.jws.WebParam;
+import jakarta.jws.WebResult;
 import jakarta.jws.WebService;
 
 import java.util.List;
@@ -15,34 +17,40 @@ public class Staff {
         staffService = new StaffService();
     }
 
+    @WebResult(name="Staff")
     public List<StaffDto> getAllStaff() {
         return staffService.getAllStaff();
     }
 
-    public StaffDto getStaffById(int id) {
+    @WebResult(name="Staff")
+    public StaffDto getStaffById(@WebParam(name="id") int id) {
         return staffService.getStaffById(id);
     }
 
-    public void addStaff(StaffDto staffDto) {
+    public void addStaff(@WebParam(name="staff") StaffDto staffDto) {
         staffService.addStaff(staffDto);
     }
 
-    public void updateStaff(StaffDto staffDto) {
+    public void updateStaff(@WebParam(name="staff") StaffDto staffDto) {
         staffService.updateStaff(staffDto);
     }
 
-    public List<StaffDto> getStaffByName(String name) {
+    @WebResult(name="Staff")
+    public List<StaffDto> getStaffByName(@WebParam(name="name") String name) {
         return staffService.getStaffByName(name);
     }
 
-    public AddressDto getStaffAddress(int id) {
+    @WebResult(name="Address")
+    public AddressDto getStaffAddress(@WebParam(name="id") int id) {
         return staffService.getStaffAddress(id);
     }
 
+    @WebResult(name="ActiveStaff")
     public long getNumberActiveStaff() {
         return staffService.getNumberActiveStaff();
     }
 
+    @WebResult(name="InActiveStaff")
     public long getNumberInActiveStaff() {
         return staffService.getNumberInActiveStaff();
     }

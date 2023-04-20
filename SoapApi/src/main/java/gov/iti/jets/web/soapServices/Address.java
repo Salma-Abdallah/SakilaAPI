@@ -2,6 +2,8 @@ package gov.iti.jets.web.soapServices;
 
 import gov.iti.jets.web.dto.*;
 import gov.iti.jets.web.services.AddressServices;
+import jakarta.jws.WebParam;
+import jakarta.jws.WebResult;
 import jakarta.jws.WebService;
 
 import java.util.List;
@@ -14,31 +16,36 @@ public class Address {
         addressServices = new AddressServices();
     }
 
+    @WebResult(name="addresses")
     public List<AddressDto> getAllAddresses() {
         return addressServices.getAllAddresses();
     }
 
-    public AddressDto getAddressById(int id) {
+    @WebResult(name="address")
+    public AddressDto getAddressById(@WebParam(name = "id") int id) {
         return addressServices.getAddressById(id);
     }
 
-    public void addAddress(AddressUpdateDto addressDto) {
+    public void addAddress(@WebParam(name = "address") AddressUpdateDto addressDto) {
         addressServices.addAddress(addressDto);
     }
 
-    public void updateAddress(AddressUpdateDto addressDto) {
+    public void updateAddress(@WebParam(name = "address") AddressUpdateDto addressDto) {
         addressServices.updateAddress(addressDto);
     }
 
-    public List<StoreDto> getStoreByAddressId(int id) {
+    @WebResult(name="Stores")
+    public List<StoreDto> getStoreByAddressId(@WebParam(name = "id") int id) {
         return addressServices.getStoreByAddressId(id);
     }
 
-    public List<StaffDto> getStaffByAddressId(int id) {
+    @WebResult(name="Staff")
+    public List<StaffDto> getStaffByAddressId(@WebParam(name = "id") int id) {
         return addressServices.getStaffByAddressId(id);
     }
 
-    public List<CustomerDto> getCustomerByAddress(int id) {
+    @WebResult(name="Customers")
+    public List<CustomerDto> getCustomerByAddress(@WebParam(name = "id") int id) {
         return  addressServices.getCustomerByAddress(id);
     }
 }

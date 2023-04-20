@@ -4,6 +4,8 @@ package gov.iti.jets.web.soapServices;
 import gov.iti.jets.web.dto.StoreDto;
 import gov.iti.jets.web.dto.StoreUpdateDto;
 import gov.iti.jets.web.services.StoreService;
+import jakarta.jws.WebParam;
+import jakarta.jws.WebResult;
 import jakarta.jws.WebService;
 
 import java.util.List;
@@ -16,11 +18,13 @@ public class Store {
         storeService = new StoreService();
     }
 
+    @WebResult(name="Stores")
     public List<StoreDto> getAllStores() {
         return storeService.getAllStores();
     }
 
-    public StoreDto getStoreById(int id) {
+    @WebResult(name="Stores")
+    public StoreDto getStoreById(@WebParam(name = "id") int id) {
         return storeService.getStoreById(id);
     }
 
