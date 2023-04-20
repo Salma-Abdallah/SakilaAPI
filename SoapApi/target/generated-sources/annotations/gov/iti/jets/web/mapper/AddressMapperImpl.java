@@ -7,8 +7,8 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-04-20T14:26:58+0200",
-    comments = "version: 1.5.3.Final, compiler: Eclipse JDT (IDE) 3.33.0.v20230218-1114, environment: Java 17.0.6 (Eclipse Adoptium)"
+    date = "2023-04-20T14:42:01+0200",
+    comments = "version: 1.5.3.Final, compiler: javac, environment: Java 17.0.5 (Oracle Corporation)"
 )
 public class AddressMapperImpl implements AddressMapper {
 
@@ -20,15 +20,15 @@ public class AddressMapperImpl implements AddressMapper {
 
         AddressDto addressDto = new AddressDto();
 
+        addressDto.setId( source.getId() );
         addressDto.setAddress( source.getAddress() );
         addressDto.setAddress2( source.getAddress2() );
         addressDto.setDistrict( source.getDistrict() );
-        addressDto.setId( source.getId() );
+        addressDto.setPostalCode( source.getPostalCode() );
+        addressDto.setPhone( source.getPhone() );
         if ( source.getLastUpdate() != null ) {
             addressDto.setLastUpdate( Date.from( source.getLastUpdate() ) );
         }
-        addressDto.setPhone( source.getPhone() );
-        addressDto.setPostalCode( source.getPostalCode() );
 
         return addressDto;
     }
@@ -41,15 +41,15 @@ public class AddressMapperImpl implements AddressMapper {
 
         Address address = new Address();
 
+        address.setId( destination.getId() );
         address.setAddress( destination.getAddress() );
         address.setAddress2( destination.getAddress2() );
         address.setDistrict( destination.getDistrict() );
-        address.setId( destination.getId() );
+        address.setPostalCode( destination.getPostalCode() );
+        address.setPhone( destination.getPhone() );
         if ( destination.getLastUpdate() != null ) {
             address.setLastUpdate( destination.getLastUpdate().toInstant() );
         }
-        address.setPhone( destination.getPhone() );
-        address.setPostalCode( destination.getPostalCode() );
 
         return address;
     }
@@ -60,6 +60,9 @@ public class AddressMapperImpl implements AddressMapper {
             return address;
         }
 
+        if ( addressDto.getId() != null ) {
+            address.setId( addressDto.getId() );
+        }
         if ( addressDto.getAddress() != null ) {
             address.setAddress( addressDto.getAddress() );
         }
@@ -69,17 +72,14 @@ public class AddressMapperImpl implements AddressMapper {
         if ( addressDto.getDistrict() != null ) {
             address.setDistrict( addressDto.getDistrict() );
         }
-        if ( addressDto.getId() != null ) {
-            address.setId( addressDto.getId() );
-        }
-        if ( addressDto.getLastUpdate() != null ) {
-            address.setLastUpdate( addressDto.getLastUpdate().toInstant() );
+        if ( addressDto.getPostalCode() != null ) {
+            address.setPostalCode( addressDto.getPostalCode() );
         }
         if ( addressDto.getPhone() != null ) {
             address.setPhone( addressDto.getPhone() );
         }
-        if ( addressDto.getPostalCode() != null ) {
-            address.setPostalCode( addressDto.getPostalCode() );
+        if ( addressDto.getLastUpdate() != null ) {
+            address.setLastUpdate( addressDto.getLastUpdate().toInstant() );
         }
 
         return address;

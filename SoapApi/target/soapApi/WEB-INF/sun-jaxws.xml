@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
+
+    <endpoint
+        name="ActorWebService"
+        implementation="gov.iti.jets.web.soapServices.Actor"
+        url-pattern="/ws/actor" />
+
+    <endpoint
+            name="AddressWebService"
+            implementation="gov.iti.jets.web.soapServices.Address"
+            url-pattern="/ws/address" />
+
+    <endpoint
+            name="CategoryWebService"
+            implementation="gov.iti.jets.web.soapServices.Category"
+            url-pattern="/ws/category" />
+
+    <endpoint
+            name="CityWebService"
+            implementation="gov.iti.jets.web.soapServices.City"
+            url-pattern="/ws/city" />
+
+    <endpoint
+            name="CountryWebService"
+            implementation="gov.iti.jets.web.soapServices.Country"
+            url-pattern="/ws/country" />
+
+    <endpoint
+            name="CustomerWebService"
+            implementation="gov.iti.jets.web.soapServices.Customer"
+            url-pattern="/ws/customer" />
+
+    <endpoint
+            name="FilmWebService"
+            implementation="gov.iti.jets.web.soapServices.Film"
+            url-pattern="/ws/film" />
+
+    <endpoint
+            name="InventoryWebService"
+            implementation="gov.iti.jets.web.soapServices.Inventory"
+            url-pattern="/ws/inventory" />
+
+    <endpoint
+            name="LanguageWebService"
+            implementation="gov.iti.jets.web.soapServices.Language"
+            url-pattern="/ws/language" />
+
+    <endpoint
+            name="PaymentWebService"
+            implementation="gov.iti.jets.web.soapServices.Payment"
+            url-pattern="/ws/payment" />
+
+    <endpoint
+            name="RentalWebService"
+            implementation="gov.iti.jets.web.soapServices.Rental"
+            url-pattern="/ws/rental" />
+
+    <endpoint
+            name="StaffWebService"
+            implementation="gov.iti.jets.web.soapServices.Staff"
+            url-pattern="/ws/staff" />
+
+    <endpoint
+            name="StoreWebService"
+            implementation="gov.iti.jets.web.soapServices.Store"
+            url-pattern="/ws/store" />
+
+</endpoints>

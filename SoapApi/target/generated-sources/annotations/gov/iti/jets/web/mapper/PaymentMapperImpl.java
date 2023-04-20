@@ -9,8 +9,8 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-04-20T14:26:58+0200",
-    comments = "version: 1.5.3.Final, compiler: Eclipse JDT (IDE) 3.33.0.v20230218-1114, environment: Java 17.0.6 (Eclipse Adoptium)"
+    date = "2023-04-20T14:42:01+0200",
+    comments = "version: 1.5.3.Final, compiler: javac, environment: Java 17.0.5 (Oracle Corporation)"
 )
 public class PaymentMapperImpl implements PaymentMapper {
 
@@ -25,10 +25,10 @@ public class PaymentMapperImpl implements PaymentMapper {
         payment.setStaff( paymentDtoToStaff( paymentDto ) );
         payment.setCustomer( paymentDtoToCustomer( paymentDto ) );
         payment.setRental( paymentDtoToRental( paymentDto ) );
-        payment.setAmount( paymentDto.getAmount() );
         payment.setId( paymentDto.getId() );
-        payment.setLastUpdate( paymentDto.getLastUpdate() );
+        payment.setAmount( paymentDto.getAmount() );
         payment.setPaymentDate( paymentDto.getPaymentDate() );
+        payment.setLastUpdate( paymentDto.getLastUpdate() );
 
         return payment;
     }
@@ -44,10 +44,10 @@ public class PaymentMapperImpl implements PaymentMapper {
         paymentDto.setStaffId( paymentStaffId( payment ) );
         paymentDto.setCustomerId( paymentCustomerId( payment ) );
         paymentDto.setRentalId( paymentRentalId( payment ) );
-        paymentDto.setAmount( payment.getAmount() );
         paymentDto.setId( payment.getId() );
-        paymentDto.setLastUpdate( payment.getLastUpdate() );
+        paymentDto.setAmount( payment.getAmount() );
         paymentDto.setPaymentDate( payment.getPaymentDate() );
+        paymentDto.setLastUpdate( payment.getLastUpdate() );
 
         return paymentDto;
     }
@@ -70,17 +70,17 @@ public class PaymentMapperImpl implements PaymentMapper {
             payment.setRental( new Rental() );
         }
         paymentDtoToRental1( paymentDto, payment.getRental() );
-        if ( paymentDto.getAmount() != null ) {
-            payment.setAmount( paymentDto.getAmount() );
-        }
         if ( paymentDto.getId() != null ) {
             payment.setId( paymentDto.getId() );
         }
-        if ( paymentDto.getLastUpdate() != null ) {
-            payment.setLastUpdate( paymentDto.getLastUpdate() );
+        if ( paymentDto.getAmount() != null ) {
+            payment.setAmount( paymentDto.getAmount() );
         }
         if ( paymentDto.getPaymentDate() != null ) {
             payment.setPaymentDate( paymentDto.getPaymentDate() );
+        }
+        if ( paymentDto.getLastUpdate() != null ) {
+            payment.setLastUpdate( paymentDto.getLastUpdate() );
         }
 
         return payment;

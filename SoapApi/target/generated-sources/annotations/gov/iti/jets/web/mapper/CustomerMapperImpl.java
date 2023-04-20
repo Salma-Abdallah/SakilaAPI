@@ -7,8 +7,8 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-04-20T14:26:58+0200",
-    comments = "version: 1.5.3.Final, compiler: Eclipse JDT (IDE) 3.33.0.v20230218-1114, environment: Java 17.0.6 (Eclipse Adoptium)"
+    date = "2023-04-20T14:42:01+0200",
+    comments = "version: 1.5.3.Final, compiler: javac, environment: Java 17.0.5 (Oracle Corporation)"
 )
 public class CustomerMapperImpl implements CustomerMapper {
 
@@ -20,14 +20,14 @@ public class CustomerMapperImpl implements CustomerMapper {
 
         CustomerDto customerDto = new CustomerDto();
 
+        customerDto.setId( source.getId() );
+        customerDto.setFirstName( source.getFirstName() );
+        customerDto.setLastName( source.getLastName() );
+        customerDto.setEmail( source.getEmail() );
         customerDto.setActive( source.getActive() );
         if ( source.getCreateDate() != null ) {
             customerDto.setCreateDate( Date.from( source.getCreateDate() ) );
         }
-        customerDto.setEmail( source.getEmail() );
-        customerDto.setFirstName( source.getFirstName() );
-        customerDto.setId( source.getId() );
-        customerDto.setLastName( source.getLastName() );
         if ( source.getLastUpdate() != null ) {
             customerDto.setLastUpdate( Date.from( source.getLastUpdate() ) );
         }
@@ -43,14 +43,14 @@ public class CustomerMapperImpl implements CustomerMapper {
 
         Customer customer = new Customer();
 
+        customer.setId( destination.getId() );
+        customer.setFirstName( destination.getFirstName() );
+        customer.setLastName( destination.getLastName() );
+        customer.setEmail( destination.getEmail() );
         customer.setActive( destination.getActive() );
         if ( destination.getCreateDate() != null ) {
             customer.setCreateDate( destination.getCreateDate().toInstant() );
         }
-        customer.setEmail( destination.getEmail() );
-        customer.setFirstName( destination.getFirstName() );
-        customer.setId( destination.getId() );
-        customer.setLastName( destination.getLastName() );
         if ( destination.getLastUpdate() != null ) {
             customer.setLastUpdate( destination.getLastUpdate().toInstant() );
         }
@@ -64,23 +64,23 @@ public class CustomerMapperImpl implements CustomerMapper {
             return customer;
         }
 
+        if ( customerDto.getId() != null ) {
+            customer.setId( customerDto.getId() );
+        }
+        if ( customerDto.getFirstName() != null ) {
+            customer.setFirstName( customerDto.getFirstName() );
+        }
+        if ( customerDto.getLastName() != null ) {
+            customer.setLastName( customerDto.getLastName() );
+        }
+        if ( customerDto.getEmail() != null ) {
+            customer.setEmail( customerDto.getEmail() );
+        }
         if ( customerDto.getActive() != null ) {
             customer.setActive( customerDto.getActive() );
         }
         if ( customerDto.getCreateDate() != null ) {
             customer.setCreateDate( customerDto.getCreateDate().toInstant() );
-        }
-        if ( customerDto.getEmail() != null ) {
-            customer.setEmail( customerDto.getEmail() );
-        }
-        if ( customerDto.getFirstName() != null ) {
-            customer.setFirstName( customerDto.getFirstName() );
-        }
-        if ( customerDto.getId() != null ) {
-            customer.setId( customerDto.getId() );
-        }
-        if ( customerDto.getLastName() != null ) {
-            customer.setLastName( customerDto.getLastName() );
         }
         if ( customerDto.getLastUpdate() != null ) {
             customer.setLastUpdate( customerDto.getLastUpdate().toInstant() );

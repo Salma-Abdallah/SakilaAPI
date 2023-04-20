@@ -6,8 +6,8 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-04-20T14:26:58+0200",
-    comments = "version: 1.5.3.Final, compiler: Eclipse JDT (IDE) 3.33.0.v20230218-1114, environment: Java 17.0.6 (Eclipse Adoptium)"
+    date = "2023-04-20T14:42:01+0200",
+    comments = "version: 1.5.3.Final, compiler: javac, environment: Java 17.0.5 (Oracle Corporation)"
 )
 public class CategoryMapperImpl implements CategoryMapper {
 
@@ -20,8 +20,8 @@ public class CategoryMapperImpl implements CategoryMapper {
         Category category = new Category();
 
         category.setId( categoryDto.getId() );
-        category.setLastUpdate( categoryDto.getLastUpdate() );
         category.setName( categoryDto.getName() );
+        category.setLastUpdate( categoryDto.getLastUpdate() );
 
         return category;
     }
@@ -35,8 +35,8 @@ public class CategoryMapperImpl implements CategoryMapper {
         CategoryDto categoryDto = new CategoryDto();
 
         categoryDto.setId( category.getId() );
-        categoryDto.setLastUpdate( category.getLastUpdate() );
         categoryDto.setName( category.getName() );
+        categoryDto.setLastUpdate( category.getLastUpdate() );
 
         return categoryDto;
     }
@@ -50,11 +50,11 @@ public class CategoryMapperImpl implements CategoryMapper {
         if ( categoryDto.getId() != null ) {
             category.setId( categoryDto.getId() );
         }
-        if ( categoryDto.getLastUpdate() != null ) {
-            category.setLastUpdate( categoryDto.getLastUpdate() );
-        }
         if ( categoryDto.getName() != null ) {
             category.setName( categoryDto.getName() );
+        }
+        if ( categoryDto.getLastUpdate() != null ) {
+            category.setLastUpdate( categoryDto.getLastUpdate() );
         }
 
         return category;

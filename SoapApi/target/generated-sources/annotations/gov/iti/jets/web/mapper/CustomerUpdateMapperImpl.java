@@ -11,8 +11,8 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-04-20T14:26:58+0200",
-    comments = "version: 1.5.3.Final, compiler: Eclipse JDT (IDE) 3.33.0.v20230218-1114, environment: Java 17.0.6 (Eclipse Adoptium)"
+    date = "2023-04-20T14:42:02+0200",
+    comments = "version: 1.5.3.Final, compiler: javac, environment: Java 17.0.5 (Oracle Corporation)"
 )
 public class CustomerUpdateMapperImpl implements CustomerUpdateMapper {
 
@@ -24,19 +24,19 @@ public class CustomerUpdateMapperImpl implements CustomerUpdateMapper {
 
         Customer customer = new Customer();
 
-        customer.setActive( customerUpdateDto.getActive() );
+        customer.setId( customerUpdateDto.getId() );
+        customer.setStore( storeDtoToStore( customerUpdateDto.getStore() ) );
+        customer.setFirstName( customerUpdateDto.getFirstName() );
+        customer.setLastName( customerUpdateDto.getLastName() );
+        customer.setEmail( customerUpdateDto.getEmail() );
         customer.setAddress( addressDtoToAddress( customerUpdateDto.getAddress() ) );
+        customer.setActive( customerUpdateDto.getActive() );
         if ( customerUpdateDto.getCreateDate() != null ) {
             customer.setCreateDate( customerUpdateDto.getCreateDate().toInstant() );
         }
-        customer.setEmail( customerUpdateDto.getEmail() );
-        customer.setFirstName( customerUpdateDto.getFirstName() );
-        customer.setId( customerUpdateDto.getId() );
-        customer.setLastName( customerUpdateDto.getLastName() );
         if ( customerUpdateDto.getLastUpdate() != null ) {
             customer.setLastUpdate( customerUpdateDto.getLastUpdate().toInstant() );
         }
-        customer.setStore( storeDtoToStore( customerUpdateDto.getStore() ) );
 
         return customer;
     }
@@ -49,19 +49,19 @@ public class CustomerUpdateMapperImpl implements CustomerUpdateMapper {
 
         CustomerUpdateDto customerUpdateDto = new CustomerUpdateDto();
 
+        customerUpdateDto.setId( customer.getId() );
+        customerUpdateDto.setStore( storeToStoreDto( customer.getStore() ) );
+        customerUpdateDto.setFirstName( customer.getFirstName() );
+        customerUpdateDto.setLastName( customer.getLastName() );
+        customerUpdateDto.setEmail( customer.getEmail() );
         customerUpdateDto.setActive( customer.getActive() );
-        customerUpdateDto.setAddress( addressToAddressDto( customer.getAddress() ) );
         if ( customer.getCreateDate() != null ) {
             customerUpdateDto.setCreateDate( Date.from( customer.getCreateDate() ) );
         }
-        customerUpdateDto.setEmail( customer.getEmail() );
-        customerUpdateDto.setFirstName( customer.getFirstName() );
-        customerUpdateDto.setId( customer.getId() );
-        customerUpdateDto.setLastName( customer.getLastName() );
         if ( customer.getLastUpdate() != null ) {
             customerUpdateDto.setLastUpdate( Date.from( customer.getLastUpdate() ) );
         }
-        customerUpdateDto.setStore( storeToStoreDto( customer.getStore() ) );
+        customerUpdateDto.setAddress( addressToAddressDto( customer.getAddress() ) );
 
         return customerUpdateDto;
     }
@@ -72,32 +72,8 @@ public class CustomerUpdateMapperImpl implements CustomerUpdateMapper {
             return customer;
         }
 
-        if ( customerEditDto.getActive() != null ) {
-            customer.setActive( customerEditDto.getActive() );
-        }
-        if ( customerEditDto.getAddress() != null ) {
-            if ( customer.getAddress() == null ) {
-                customer.setAddress( new Address() );
-            }
-            addressDtoToAddress1( customerEditDto.getAddress(), customer.getAddress() );
-        }
-        if ( customerEditDto.getCreateDate() != null ) {
-            customer.setCreateDate( customerEditDto.getCreateDate().toInstant() );
-        }
-        if ( customerEditDto.getEmail() != null ) {
-            customer.setEmail( customerEditDto.getEmail() );
-        }
-        if ( customerEditDto.getFirstName() != null ) {
-            customer.setFirstName( customerEditDto.getFirstName() );
-        }
         if ( customerEditDto.getId() != null ) {
             customer.setId( customerEditDto.getId() );
-        }
-        if ( customerEditDto.getLastName() != null ) {
-            customer.setLastName( customerEditDto.getLastName() );
-        }
-        if ( customerEditDto.getLastUpdate() != null ) {
-            customer.setLastUpdate( customerEditDto.getLastUpdate().toInstant() );
         }
         if ( customerEditDto.getStore() != null ) {
             if ( customer.getStore() == null ) {
@@ -105,28 +81,32 @@ public class CustomerUpdateMapperImpl implements CustomerUpdateMapper {
             }
             storeDtoToStore1( customerEditDto.getStore(), customer.getStore() );
         }
+        if ( customerEditDto.getFirstName() != null ) {
+            customer.setFirstName( customerEditDto.getFirstName() );
+        }
+        if ( customerEditDto.getLastName() != null ) {
+            customer.setLastName( customerEditDto.getLastName() );
+        }
+        if ( customerEditDto.getEmail() != null ) {
+            customer.setEmail( customerEditDto.getEmail() );
+        }
+        if ( customerEditDto.getAddress() != null ) {
+            if ( customer.getAddress() == null ) {
+                customer.setAddress( new Address() );
+            }
+            addressDtoToAddress1( customerEditDto.getAddress(), customer.getAddress() );
+        }
+        if ( customerEditDto.getActive() != null ) {
+            customer.setActive( customerEditDto.getActive() );
+        }
+        if ( customerEditDto.getCreateDate() != null ) {
+            customer.setCreateDate( customerEditDto.getCreateDate().toInstant() );
+        }
+        if ( customerEditDto.getLastUpdate() != null ) {
+            customer.setLastUpdate( customerEditDto.getLastUpdate().toInstant() );
+        }
 
         return customer;
-    }
-
-    protected Address addressDtoToAddress(AddressDto addressDto) {
-        if ( addressDto == null ) {
-            return null;
-        }
-
-        Address address = new Address();
-
-        address.setAddress( addressDto.getAddress() );
-        address.setAddress2( addressDto.getAddress2() );
-        address.setDistrict( addressDto.getDistrict() );
-        address.setId( addressDto.getId() );
-        if ( addressDto.getLastUpdate() != null ) {
-            address.setLastUpdate( addressDto.getLastUpdate().toInstant() );
-        }
-        address.setPhone( addressDto.getPhone() );
-        address.setPostalCode( addressDto.getPostalCode() );
-
-        return address;
     }
 
     protected Store storeDtoToStore(StoreDto storeDto) {
@@ -142,24 +122,24 @@ public class CustomerUpdateMapperImpl implements CustomerUpdateMapper {
         return store;
     }
 
-    protected AddressDto addressToAddressDto(Address address) {
-        if ( address == null ) {
+    protected Address addressDtoToAddress(AddressDto addressDto) {
+        if ( addressDto == null ) {
             return null;
         }
 
-        AddressDto addressDto = new AddressDto();
+        Address address = new Address();
 
-        addressDto.setAddress( address.getAddress() );
-        addressDto.setAddress2( address.getAddress2() );
-        addressDto.setDistrict( address.getDistrict() );
-        addressDto.setId( address.getId() );
-        if ( address.getLastUpdate() != null ) {
-            addressDto.setLastUpdate( Date.from( address.getLastUpdate() ) );
+        address.setId( addressDto.getId() );
+        address.setAddress( addressDto.getAddress() );
+        address.setAddress2( addressDto.getAddress2() );
+        address.setDistrict( addressDto.getDistrict() );
+        address.setPostalCode( addressDto.getPostalCode() );
+        address.setPhone( addressDto.getPhone() );
+        if ( addressDto.getLastUpdate() != null ) {
+            address.setLastUpdate( addressDto.getLastUpdate().toInstant() );
         }
-        addressDto.setPhone( address.getPhone() );
-        addressDto.setPostalCode( address.getPostalCode() );
 
-        return addressDto;
+        return address;
     }
 
     protected StoreDto storeToStoreDto(Store store) {
@@ -175,23 +155,24 @@ public class CustomerUpdateMapperImpl implements CustomerUpdateMapper {
         return storeDto;
     }
 
-    protected void addressDtoToAddress1(AddressDto addressDto, Address mappingTarget) {
-        if ( addressDto == null ) {
-            return;
+    protected AddressDto addressToAddressDto(Address address) {
+        if ( address == null ) {
+            return null;
         }
 
-        mappingTarget.setAddress( addressDto.getAddress() );
-        mappingTarget.setAddress2( addressDto.getAddress2() );
-        mappingTarget.setDistrict( addressDto.getDistrict() );
-        mappingTarget.setId( addressDto.getId() );
-        if ( addressDto.getLastUpdate() != null ) {
-            mappingTarget.setLastUpdate( addressDto.getLastUpdate().toInstant() );
+        AddressDto addressDto = new AddressDto();
+
+        addressDto.setId( address.getId() );
+        addressDto.setAddress( address.getAddress() );
+        addressDto.setAddress2( address.getAddress2() );
+        addressDto.setDistrict( address.getDistrict() );
+        addressDto.setPostalCode( address.getPostalCode() );
+        addressDto.setPhone( address.getPhone() );
+        if ( address.getLastUpdate() != null ) {
+            addressDto.setLastUpdate( Date.from( address.getLastUpdate() ) );
         }
-        else {
-            mappingTarget.setLastUpdate( null );
-        }
-        mappingTarget.setPhone( addressDto.getPhone() );
-        mappingTarget.setPostalCode( addressDto.getPostalCode() );
+
+        return addressDto;
     }
 
     protected void storeDtoToStore1(StoreDto storeDto, Store mappingTarget) {
@@ -201,5 +182,24 @@ public class CustomerUpdateMapperImpl implements CustomerUpdateMapper {
 
         mappingTarget.setId( storeDto.getId() );
         mappingTarget.setLastUpdate( storeDto.getLastUpdate() );
+    }
+
+    protected void addressDtoToAddress1(AddressDto addressDto, Address mappingTarget) {
+        if ( addressDto == null ) {
+            return;
+        }
+
+        mappingTarget.setId( addressDto.getId() );
+        mappingTarget.setAddress( addressDto.getAddress() );
+        mappingTarget.setAddress2( addressDto.getAddress2() );
+        mappingTarget.setDistrict( addressDto.getDistrict() );
+        mappingTarget.setPostalCode( addressDto.getPostalCode() );
+        mappingTarget.setPhone( addressDto.getPhone() );
+        if ( addressDto.getLastUpdate() != null ) {
+            mappingTarget.setLastUpdate( addressDto.getLastUpdate().toInstant() );
+        }
+        else {
+            mappingTarget.setLastUpdate( null );
+        }
     }
 }
