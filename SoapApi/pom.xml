@@ -147,7 +147,7 @@
                     <url>http://localhost:8090/manager/text</url>
                     <username>admin</username>
                     <password>admin</password>
-                    <path>/sakila</path>
+                    <path>/sakilaSoapApi</path>
                 </configuration>
             </plugin>
         </plugins>

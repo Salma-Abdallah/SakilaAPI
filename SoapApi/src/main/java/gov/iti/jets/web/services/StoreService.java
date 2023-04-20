@@ -35,7 +35,7 @@ public class StoreService {
         return mapper.toDto(store);
     }
 
-    public void addStore(StoreUpdateDto storeDto){
+        public void addStore(StoreUpdateDto storeDto){
         StoreUpdateMapper storeEditMapper = Mappers.getMapper(StoreUpdateMapper.class);
         LocalDate localDate = LocalDate.now();
         ZoneId defaultZoneId = ZoneId.systemDefault();

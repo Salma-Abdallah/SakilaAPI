@@ -8,19 +8,23 @@
         <outputRelativeToContentRoot value="true" />
         <module name="tomcat-jaxws-demo" />
       </profile>
-      <profile name="Annotation profile for soapApi" enabled="true">
+      <profile name="Annotation profile for RestApi" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.5.3.Final/mapstruct-processor-1.5.3.Final.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.5.3.Final/mapstruct-1.5.3.Final.jar" />
-        </processorPath>
-        <module name="soapApi" />
+        <option name="mapstruct.defaultComponentModel" value="spring" />
+        <option name="mapstruct.suppressGeneratorTimestamp" value="true" />
+        <module name="RestApi" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="atm-system-serverSide" target="17" />
+      <module name="soapApi" target="17" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="RestApi" options="-Amapstruct.suppressGeneratorTimestamp=true -Amapstruct.defaultComponentModel=spring" />
+    </option>
   </component>
 </project>

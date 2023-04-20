@@ -3,7 +3,6 @@ package gov.iti.jets.web.services;
 import gov.iti.jets.web.dto.LanguageDto;
 import gov.iti.jets.web.mapper.LanguageMapper;
 import gov.iti.jets.web.persistence.daos.implementation.LanguageDaoImplement;
-import gov.iti.jets.web.persistence.daos.interfaces.LanguageDao;
 import gov.iti.jets.web.persistence.entity.Language;
 import org.mapstruct.factory.Mappers;
 
@@ -36,25 +35,25 @@ public class LanguageService {
         return mapper.toDto(language);
     }
 
-    public void addLanguage(LanguageDto languageDto) {
-        LocalDate localDate = LocalDate.now();
-        ZoneId defaultZoneId = ZoneId.systemDefault();
-        languageDto.setLastUpdate(Date.from(localDate.atStartOfDay(defaultZoneId).toInstant()).toInstant());
+    // public void addLanguage(LanguageDto languageDto) {
+    //     LocalDate localDate = LocalDate.now();
+    //     ZoneId defaultZoneId = ZoneId.systemDefault();
+    //     languageDto.setLastUpdate(Date.from(localDate.atStartOfDay(defaultZoneId).toInstant()).toInstant());
 
-        Language language =mapper.toEntity(languageDto);
-        languageDao.add(language);
+    //     Language language =mapper.toEntity(languageDto);
+    //     languageDao.add(language);
 
-    }
+    // }
 
-    public void updateLanguage(LanguageDto languageDto) {
-        LocalDate localDate = LocalDate.now();
-        ZoneId defaultZoneId = ZoneId.systemDefault();
-        languageDto.setLastUpdate(Date.from(localDate.atStartOfDay(defaultZoneId).toInstant()).toInstant());
+    // public void updateLanguage(LanguageDto languageDto) {
+    //     LocalDate localDate = LocalDate.now();
+    //     ZoneId defaultZoneId = ZoneId.systemDefault();
+    //     languageDto.setLastUpdate(Date.from(localDate.atStartOfDay(defaultZoneId).toInstant()).toInstant());
 
-        Language language =mapper.toEntity(languageDto);
-        languageDao.update(language);
+    //     Language language =mapper.toEntity(languageDto);
+    //     languageDao.update(language);
 
-    }
+    // }
 
     public LanguageDto getFilmLanguageById(int id) {
         Language language = languageDao.getFilmLanguage(id);

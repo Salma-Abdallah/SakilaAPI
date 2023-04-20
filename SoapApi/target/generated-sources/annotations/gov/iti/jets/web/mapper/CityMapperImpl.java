@@ -4,13 +4,12 @@ import gov.iti.jets.web.dto.CityDto;
 import gov.iti.jets.web.dto.CountryDto;
 import gov.iti.jets.web.persistence.entity.City;
 import gov.iti.jets.web.persistence.entity.Country;
-import java.util.Date;
 import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-04-19T23:05:02+0200",
-    comments = "version: 1.5.3.Final, compiler: javac, environment: Java 17.0.5 (Oracle Corporation)"
+    date = "2023-04-20T13:26:04+0200",
+    comments = "version: 1.5.3.Final, compiler: Eclipse JDT (IDE) 3.33.0.v20230218-1114, environment: Java 17.0.6 (Eclipse Adoptium)"
 )
 public class CityMapperImpl implements CityMapper {
 
@@ -25,9 +24,7 @@ public class CityMapperImpl implements CityMapper {
         cityDto.setId( city.getId() );
         cityDto.setCity( city.getCity() );
         cityDto.setCountry( countryToCountryDto( city.getCountry() ) );
-        if ( city.getLastUpdate() != null ) {
-            cityDto.setLastUpdate( Date.from( city.getLastUpdate() ) );
-        }
+        cityDto.setLastUpdate( city.getLastUpdate() );
 
         return cityDto;
     }
@@ -43,9 +40,7 @@ public class CityMapperImpl implements CityMapper {
         city.setId( cityDto.getId() );
         city.setCity( cityDto.getCity() );
         city.setCountry( countryDtoToCountry( cityDto.getCountry() ) );
-        if ( cityDto.getLastUpdate() != null ) {
-            city.setLastUpdate( cityDto.getLastUpdate().toInstant() );
-        }
+        city.setLastUpdate( cityDto.getLastUpdate() );
 
         return city;
     }
@@ -69,7 +64,7 @@ public class CityMapperImpl implements CityMapper {
             countryDtoToCountry1( cityDto.getCountry(), city.getCountry() );
         }
         if ( cityDto.getLastUpdate() != null ) {
-            city.setLastUpdate( cityDto.getLastUpdate().toInstant() );
+            city.setLastUpdate( cityDto.getLastUpdate() );
         }
 
         return city;
@@ -84,9 +79,7 @@ public class CityMapperImpl implements CityMapper {
 
         countryDto.setId( country.getId() );
         countryDto.setCountry( country.getCountry() );
-        if ( country.getLastUpdate() != null ) {
-            countryDto.setLastUpdate( Date.from( country.getLastUpdate() ) );
-        }
+        countryDto.setLastUpdate( country.getLastUpdate() );
 
         return countryDto;
     }
@@ -100,9 +93,7 @@ public class CityMapperImpl implements CityMapper {
 
         country.setId( countryDto.getId() );
         country.setCountry( countryDto.getCountry() );
-        if ( countryDto.getLastUpdate() != null ) {
-            country.setLastUpdate( countryDto.getLastUpdate().toInstant() );
-        }
+        country.setLastUpdate( countryDto.getLastUpdate() );
 
         return country;
     }
@@ -114,11 +105,6 @@ public class CityMapperImpl implements CityMapper {
 
         mappingTarget.setId( countryDto.getId() );
         mappingTarget.setCountry( countryDto.getCountry() );
-        if ( countryDto.getLastUpdate() != null ) {
-            mappingTarget.setLastUpdate( countryDto.getLastUpdate().toInstant() );
-        }
-        else {
-            mappingTarget.setLastUpdate( null );
-        }
+        mappingTarget.setLastUpdate( countryDto.getLastUpdate() );
     }
 }
