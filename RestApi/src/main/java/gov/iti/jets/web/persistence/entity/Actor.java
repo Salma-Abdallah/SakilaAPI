@@ -23,7 +23,7 @@ public class Actor {
     @Column(name = "last_update", nullable = false)
     private Instant lastUpdate;
 
-    @OneToMany(mappedBy = "actor",cascade =CascadeType.ALL)
+    @OneToMany(mappedBy = "actor")
     private Set<FilmActor> filmActors = new LinkedHashSet<>();
 
     public Integer getId() {
