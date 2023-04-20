@@ -7,7 +7,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-04-20T13:26:04+0200",
+    date = "2023-04-20T14:26:58+0200",
     comments = "version: 1.5.3.Final, compiler: Eclipse JDT (IDE) 3.33.0.v20230218-1114, environment: Java 17.0.6 (Eclipse Adoptium)"
 )
 public class FilmMapperImpl implements FilmMapper {
@@ -22,17 +22,17 @@ public class FilmMapperImpl implements FilmMapper {
 
         film.setOriginalLanguage( filmDtoToLanguage( filmDto ) );
         film.setLanguage( filmDtoToLanguage1( filmDto ) );
-        film.setId( filmDto.getId() );
-        film.setTitle( filmDto.getTitle() );
         film.setDescription( filmDto.getDescription() );
+        film.setId( filmDto.getId() );
+        film.setLastUpdate( filmDto.getLastUpdate() );
+        film.setLength( filmDto.getLength() );
+        film.setRating( filmDto.getRating() );
         film.setReleaseYear( filmDto.getReleaseYear() );
         film.setRentalDuration( filmDto.getRentalDuration() );
         film.setRentalRate( filmDto.getRentalRate() );
-        film.setLength( filmDto.getLength() );
         film.setReplacementCost( filmDto.getReplacementCost() );
-        film.setRating( filmDto.getRating() );
         film.setSpecialFeatures( filmDto.getSpecialFeatures() );
-        film.setLastUpdate( filmDto.getLastUpdate() );
+        film.setTitle( filmDto.getTitle() );
 
         return film;
     }
@@ -47,17 +47,17 @@ public class FilmMapperImpl implements FilmMapper {
 
         filmDto.setOriginalLanguageId( filmOriginalLanguageId( film ) );
         filmDto.setLanguageId( filmLanguageId( film ) );
-        filmDto.setId( film.getId() );
-        filmDto.setTitle( film.getTitle() );
         filmDto.setDescription( film.getDescription() );
+        filmDto.setId( film.getId() );
+        filmDto.setLastUpdate( film.getLastUpdate() );
+        filmDto.setLength( film.getLength() );
+        filmDto.setRating( film.getRating() );
         filmDto.setReleaseYear( film.getReleaseYear() );
         filmDto.setRentalDuration( film.getRentalDuration() );
         filmDto.setRentalRate( film.getRentalRate() );
-        filmDto.setLength( film.getLength() );
         filmDto.setReplacementCost( film.getReplacementCost() );
-        filmDto.setRating( film.getRating() );
         filmDto.setSpecialFeatures( film.getSpecialFeatures() );
-        filmDto.setLastUpdate( film.getLastUpdate() );
+        filmDto.setTitle( film.getTitle() );
 
         return filmDto;
     }
@@ -76,14 +76,20 @@ public class FilmMapperImpl implements FilmMapper {
             film.setLanguage( new Language() );
         }
         filmDtoToLanguage3( filmDto, film.getLanguage() );
+        if ( filmDto.getDescription() != null ) {
+            film.setDescription( filmDto.getDescription() );
+        }
         if ( filmDto.getId() != null ) {
             film.setId( filmDto.getId() );
         }
-        if ( filmDto.getTitle() != null ) {
-            film.setTitle( filmDto.getTitle() );
+        if ( filmDto.getLastUpdate() != null ) {
+            film.setLastUpdate( filmDto.getLastUpdate() );
         }
-        if ( filmDto.getDescription() != null ) {
-            film.setDescription( filmDto.getDescription() );
+        if ( filmDto.getLength() != null ) {
+            film.setLength( filmDto.getLength() );
+        }
+        if ( filmDto.getRating() != null ) {
+            film.setRating( filmDto.getRating() );
         }
         if ( filmDto.getReleaseYear() != null ) {
             film.setReleaseYear( filmDto.getReleaseYear() );
@@ -94,20 +100,14 @@ public class FilmMapperImpl implements FilmMapper {
         if ( filmDto.getRentalRate() != null ) {
             film.setRentalRate( filmDto.getRentalRate() );
         }
-        if ( filmDto.getLength() != null ) {
-            film.setLength( filmDto.getLength() );
-        }
         if ( filmDto.getReplacementCost() != null ) {
             film.setReplacementCost( filmDto.getReplacementCost() );
-        }
-        if ( filmDto.getRating() != null ) {
-            film.setRating( filmDto.getRating() );
         }
         if ( filmDto.getSpecialFeatures() != null ) {
             film.setSpecialFeatures( filmDto.getSpecialFeatures() );
         }
-        if ( filmDto.getLastUpdate() != null ) {
-            film.setLastUpdate( filmDto.getLastUpdate() );
+        if ( filmDto.getTitle() != null ) {
+            film.setTitle( filmDto.getTitle() );
         }
 
         return film;

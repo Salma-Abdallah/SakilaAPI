@@ -4,6 +4,8 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.Arrays;
+import java.util.Objects;
 
 @Data
 public class StaffDto implements Serializable {
@@ -124,5 +126,20 @@ public class StaffDto implements Serializable {
 
     public void setLastUpdate(Instant lastUpdate) {
         this.lastUpdate = lastUpdate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        StaffDto staffDto = (StaffDto) o;
+        return Objects.equals(id, staffDto.id) && Objects.equals(firstName, staffDto.firstName) && Objects.equals(lastName, staffDto.lastName) && Objects.equals(addressId, staffDto.addressId) && Arrays.equals(picture, staffDto.picture) && Objects.equals(email, staffDto.email) && Objects.equals(storeId, staffDto.storeId) && Objects.equals(active, staffDto.active) && Objects.equals(username, staffDto.username) && Objects.equals(password, staffDto.password) && Objects.equals(lastUpdate, staffDto.lastUpdate);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(id, firstName, lastName, addressId, email, storeId, active, username, password, lastUpdate);
+        result = 31 * result + Arrays.hashCode(picture);
+        return result;
     }
 }

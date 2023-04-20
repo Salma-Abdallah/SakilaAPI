@@ -9,7 +9,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-04-20T13:26:04+0200",
+    date = "2023-04-20T14:26:58+0200",
     comments = "version: 1.5.3.Final, compiler: Eclipse JDT (IDE) 3.33.0.v20230218-1114, environment: Java 17.0.6 (Eclipse Adoptium)"
 )
 public class RentalMapperImpl implements RentalMapper {
@@ -26,9 +26,9 @@ public class RentalMapperImpl implements RentalMapper {
         rental.setCustomer( rentalDtoToCustomer( rentalDto ) );
         rental.setInventory( rentalDtoToInventory( rentalDto ) );
         rental.setId( rentalDto.getId() );
+        rental.setLastUpdate( rentalDto.getLastUpdate() );
         rental.setRentalDate( rentalDto.getRentalDate() );
         rental.setReturnDate( rentalDto.getReturnDate() );
-        rental.setLastUpdate( rentalDto.getLastUpdate() );
 
         return rental;
     }
@@ -45,9 +45,9 @@ public class RentalMapperImpl implements RentalMapper {
         rentalDto.setCustomerId( rentalCustomerId( rental ) );
         rentalDto.setInventoryId( rentalInventoryId( rental ) );
         rentalDto.setId( rental.getId() );
+        rentalDto.setLastUpdate( rental.getLastUpdate() );
         rentalDto.setRentalDate( rental.getRentalDate() );
         rentalDto.setReturnDate( rental.getReturnDate() );
-        rentalDto.setLastUpdate( rental.getLastUpdate() );
 
         return rentalDto;
     }
@@ -73,14 +73,14 @@ public class RentalMapperImpl implements RentalMapper {
         if ( rentalDto.getId() != null ) {
             rental.setId( rentalDto.getId() );
         }
+        if ( rentalDto.getLastUpdate() != null ) {
+            rental.setLastUpdate( rentalDto.getLastUpdate() );
+        }
         if ( rentalDto.getRentalDate() != null ) {
             rental.setRentalDate( rentalDto.getRentalDate() );
         }
         if ( rentalDto.getReturnDate() != null ) {
             rental.setReturnDate( rentalDto.getReturnDate() );
-        }
-        if ( rentalDto.getLastUpdate() != null ) {
-            rental.setLastUpdate( rentalDto.getLastUpdate() );
         }
 
         return rental;

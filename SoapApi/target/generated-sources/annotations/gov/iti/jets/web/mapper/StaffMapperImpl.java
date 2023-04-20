@@ -9,7 +9,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-04-20T13:26:04+0200",
+    date = "2023-04-20T14:26:58+0200",
     comments = "version: 1.5.3.Final, compiler: Eclipse JDT (IDE) 3.33.0.v20230218-1114, environment: Java 17.0.6 (Eclipse Adoptium)"
 )
 public class StaffMapperImpl implements StaffMapper {
@@ -24,18 +24,18 @@ public class StaffMapperImpl implements StaffMapper {
 
         staff.setStore( staffDtoToStore( staffDto ) );
         staff.setAddress( staffDtoToAddress( staffDto ) );
-        staff.setId( staffDto.getId() );
+        staff.setActive( staffDto.getActive() );
+        staff.setEmail( staffDto.getEmail() );
         staff.setFirstName( staffDto.getFirstName() );
+        staff.setId( staffDto.getId() );
         staff.setLastName( staffDto.getLastName() );
+        staff.setLastUpdate( staffDto.getLastUpdate() );
+        staff.setPassword( staffDto.getPassword() );
         byte[] picture = staffDto.getPicture();
         if ( picture != null ) {
             staff.setPicture( Arrays.copyOf( picture, picture.length ) );
         }
-        staff.setEmail( staffDto.getEmail() );
-        staff.setActive( staffDto.getActive() );
         staff.setUsername( staffDto.getUsername() );
-        staff.setPassword( staffDto.getPassword() );
-        staff.setLastUpdate( staffDto.getLastUpdate() );
 
         return staff;
     }
@@ -50,18 +50,18 @@ public class StaffMapperImpl implements StaffMapper {
 
         staffDto.setStoreId( staffStoreId( staff ) );
         staffDto.setAddressId( staffAddressId( staff ) );
-        staffDto.setId( staff.getId() );
+        staffDto.setActive( staff.getActive() );
+        staffDto.setEmail( staff.getEmail() );
         staffDto.setFirstName( staff.getFirstName() );
+        staffDto.setId( staff.getId() );
         staffDto.setLastName( staff.getLastName() );
+        staffDto.setLastUpdate( staff.getLastUpdate() );
+        staffDto.setPassword( staff.getPassword() );
         byte[] picture = staff.getPicture();
         if ( picture != null ) {
             staffDto.setPicture( Arrays.copyOf( picture, picture.length ) );
         }
-        staffDto.setEmail( staff.getEmail() );
-        staffDto.setActive( staff.getActive() );
         staffDto.setUsername( staff.getUsername() );
-        staffDto.setPassword( staff.getPassword() );
-        staffDto.setLastUpdate( staff.getLastUpdate() );
 
         return staffDto;
     }
@@ -80,33 +80,33 @@ public class StaffMapperImpl implements StaffMapper {
             staff.setAddress( new Address() );
         }
         staffDtoToAddress1( staffDto, staff.getAddress() );
-        if ( staffDto.getId() != null ) {
-            staff.setId( staffDto.getId() );
+        if ( staffDto.getActive() != null ) {
+            staff.setActive( staffDto.getActive() );
+        }
+        if ( staffDto.getEmail() != null ) {
+            staff.setEmail( staffDto.getEmail() );
         }
         if ( staffDto.getFirstName() != null ) {
             staff.setFirstName( staffDto.getFirstName() );
         }
+        if ( staffDto.getId() != null ) {
+            staff.setId( staffDto.getId() );
+        }
         if ( staffDto.getLastName() != null ) {
             staff.setLastName( staffDto.getLastName() );
+        }
+        if ( staffDto.getLastUpdate() != null ) {
+            staff.setLastUpdate( staffDto.getLastUpdate() );
+        }
+        if ( staffDto.getPassword() != null ) {
+            staff.setPassword( staffDto.getPassword() );
         }
         byte[] picture = staffDto.getPicture();
         if ( picture != null ) {
             staff.setPicture( Arrays.copyOf( picture, picture.length ) );
         }
-        if ( staffDto.getEmail() != null ) {
-            staff.setEmail( staffDto.getEmail() );
-        }
-        if ( staffDto.getActive() != null ) {
-            staff.setActive( staffDto.getActive() );
-        }
         if ( staffDto.getUsername() != null ) {
             staff.setUsername( staffDto.getUsername() );
-        }
-        if ( staffDto.getPassword() != null ) {
-            staff.setPassword( staffDto.getPassword() );
-        }
-        if ( staffDto.getLastUpdate() != null ) {
-            staff.setLastUpdate( staffDto.getLastUpdate() );
         }
 
         return staff;

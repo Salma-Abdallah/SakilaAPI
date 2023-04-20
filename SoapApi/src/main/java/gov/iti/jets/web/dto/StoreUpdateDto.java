@@ -2,6 +2,7 @@ package gov.iti.jets.web.dto;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.Objects;
 
 public class StoreUpdateDto implements Serializable {
     private Short id;
@@ -49,5 +50,18 @@ public class StoreUpdateDto implements Serializable {
 
     public void setLastUpdate(Instant lastUpdate) {
         this.lastUpdate = lastUpdate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        StoreUpdateDto that = (StoreUpdateDto) o;
+        return Objects.equals(id, that.id) && Objects.equals(managerStaffId, that.managerStaffId) && Objects.equals(addressId, that.addressId) && Objects.equals(lastUpdate, that.lastUpdate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, managerStaffId, addressId, lastUpdate);
     }
 }

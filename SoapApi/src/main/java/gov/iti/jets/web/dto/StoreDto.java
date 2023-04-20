@@ -4,6 +4,7 @@ import lombok.*;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.Objects;
 
 @Data
 public class StoreDto implements Serializable {
@@ -73,5 +74,18 @@ public class StoreDto implements Serializable {
 
     public void setLastUpdate(Instant lastUpdate) {
         this.lastUpdate = lastUpdate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        StoreDto storeDto = (StoreDto) o;
+        return Objects.equals(id, storeDto.id) && Objects.equals(managerStaffId, storeDto.managerStaffId) && Objects.equals(managerStaffFirstName, storeDto.managerStaffFirstName) && Objects.equals(managerStaffLastName, storeDto.managerStaffLastName) && Objects.equals(addressId, storeDto.addressId) && Objects.equals(lastUpdate, storeDto.lastUpdate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, managerStaffId, managerStaffFirstName, managerStaffLastName, addressId, lastUpdate);
     }
 }

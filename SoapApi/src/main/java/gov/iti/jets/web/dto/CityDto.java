@@ -5,6 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Date;
+import java.util.Objects;
 
 @Data
 public class CityDto implements Serializable {
@@ -53,5 +54,18 @@ public class CityDto implements Serializable {
 
     public void setLastUpdate(Instant lastUpdate) {
         this.lastUpdate = lastUpdate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CityDto cityDto = (CityDto) o;
+        return Objects.equals(id, cityDto.id) && Objects.equals(city, cityDto.city) && Objects.equals(country, cityDto.country) && Objects.equals(lastUpdate, cityDto.lastUpdate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, city, country, lastUpdate);
     }
 }

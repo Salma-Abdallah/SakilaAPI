@@ -4,7 +4,9 @@ import lombok.*;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.Objects;
 
 @Data
 public class AddressUpdateDto implements Serializable {
@@ -94,5 +96,20 @@ public class AddressUpdateDto implements Serializable {
 
     public void setLocation(byte[] location) {
         this.location = location;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AddressUpdateDto that = (AddressUpdateDto) o;
+        return Objects.equals(id, that.id) && Objects.equals(address, that.address) && Objects.equals(address2, that.address2) && Objects.equals(district, that.district) && Objects.equals(postalCode, that.postalCode) && Objects.equals(phone, that.phone) && Objects.equals(lastUpdate, that.lastUpdate) && Arrays.equals(location, that.location);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(id, address, address2, district, postalCode, phone, lastUpdate);
+        result = 31 * result + Arrays.hashCode(location);
+        return result;
     }
 }

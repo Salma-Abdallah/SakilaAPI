@@ -4,6 +4,7 @@ import lombok.*;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
 @Data
 public class CustomerUpdateDto implements Serializable {
@@ -103,5 +104,18 @@ public class CustomerUpdateDto implements Serializable {
 
     public void setAddress(AddressDto address) {
         this.address = address;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CustomerUpdateDto that = (CustomerUpdateDto) o;
+        return Objects.equals(id, that.id) && Objects.equals(store, that.store) && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(email, that.email) && Objects.equals(active, that.active) && Objects.equals(createDate, that.createDate) && Objects.equals(lastUpdate, that.lastUpdate) && Objects.equals(address, that.address);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, store, firstName, lastName, email, active, createDate, lastUpdate, address);
     }
 }

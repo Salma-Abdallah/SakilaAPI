@@ -6,6 +6,7 @@ import lombok.Data;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.Objects;
 
 @Data
 public class FilmDto implements Serializable {
@@ -145,5 +146,18 @@ public class FilmDto implements Serializable {
 
     public void setLastUpdate(Instant lastUpdate) {
         this.lastUpdate = lastUpdate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FilmDto filmDto = (FilmDto) o;
+        return Objects.equals(id, filmDto.id) && Objects.equals(title, filmDto.title) && Objects.equals(description, filmDto.description) && Objects.equals(releaseYear, filmDto.releaseYear) && Objects.equals(languageId, filmDto.languageId) && Objects.equals(originalLanguageId, filmDto.originalLanguageId) && Objects.equals(rentalDuration, filmDto.rentalDuration) && Objects.equals(rentalRate, filmDto.rentalRate) && Objects.equals(length, filmDto.length) && Objects.equals(replacementCost, filmDto.replacementCost) && rating == filmDto.rating && Objects.equals(specialFeatures, filmDto.specialFeatures) && Objects.equals(lastUpdate, filmDto.lastUpdate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, description, releaseYear, languageId, originalLanguageId, rentalDuration, rentalRate, length, replacementCost, rating, specialFeatures, lastUpdate);
     }
 }
