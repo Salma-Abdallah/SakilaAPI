@@ -2,10 +2,7 @@ package gov.iti.jets.web.restServices;
 
 import gov.iti.jets.web.dto.ActorDto;
 import gov.iti.jets.web.services.ActorServices;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.*;
 
 
@@ -31,7 +28,7 @@ public class Actor {
     }
 
     @GET
-    @Path("{id}")
+    @Path("{id: [0-9]+}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getActorById (@PathParam("id") int id , @Context UriInfo uriInfo) {
         ActorDto actorDto= actorService.getActorById(id);
@@ -40,14 +37,25 @@ public class Actor {
         return Response.ok(actorDto).links(link).build();
     }
 
-    public List<ActorDto> getActorByName(String name) {
-        return actorService.getActorByName(name);
+    @GET
+    @Path("{name}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getActorByName(@PathParam("name") String name , @Context UriInfo uriInfo) {
+        List<ActorDto> actorDtos = actorService.getActorByName(name);
+
+        Link link = Link.fromUriBuilder(uriInfo.getAbsolutePathBuilder()).rel("self").build();
+
+        return Response.ok(actorDtos).links(link).build();
     }
 
+    @POST
+    @Consumes({"application/xml", "application/json"})
     public void addNewActor (ActorDto actorDto){
         actorService.addNewActor(actorDto);
     }
 
+    @PUT
+    @Consumes({"application/xml", "application/json"})
     public void updateActor(ActorDto actorDto){
         actorService.updateActor(actorDto);
     }

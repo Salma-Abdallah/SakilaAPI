@@ -6,6 +6,8 @@ C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jet
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\persistence\daos\interfaces\StoreDao.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\dto\AddressUpdateDto.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\persistence\entity\Inventory.java
+C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\restServices\Inventory.java
+C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\restServices\Rental.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\mapper\rental\RentalFilmMappper.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\dto\rental\RentalCustomerDto.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\persistence\entity\Staff.java
@@ -31,6 +33,7 @@ C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jet
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\persistence\entity\FilmCategory.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\services\StaffService.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\persistence\entity\Customer.java
+C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\restServices\Payment.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\mapper\CustomerMapper.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\dto\RentalDto.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\mapper\PaymentMapper.java
@@ -85,11 +88,13 @@ C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jet
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\persistence\daos\interfaces\FilmDao.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\persistence\entity\Payment.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\dto\PaymentDto.java
+C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\restServices\Language.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\persistence\entity\FilmActorId.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\services\LanguageService.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\mapper\CustomerUpdateMapper.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\mapper\FilmMapper.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\dto\CountryDto.java
+C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\restServices\Store.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\mapper\CountryMapper.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\persistence\daos\interfaces\FilmCategoryDao.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\persistence\daos\interfaces\CategoryDao.java
@@ -108,6 +113,7 @@ C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jet
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\persistence\entity\Film.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\dto\CityDto.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\mapper\StaffMapper.java
+C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\restServices\Staff.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\mapper\StoreMapper.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\restServices\Customer.java
 C:\Users\HP\Desktop\Salma\getHubRepo\SakilaAPI\RestApi\src\main\java\gov\iti\jets\web\persistence\daos\interfaces\FilmTextDao.java

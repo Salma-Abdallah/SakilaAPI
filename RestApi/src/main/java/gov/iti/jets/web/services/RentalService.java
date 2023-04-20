@@ -47,6 +47,17 @@ public class RentalService {
         rentalDao.add(rental);
     }
 
+    public void updateRental(RentalDto rentalDto){
+
+        LocalDate localDate = LocalDate.now();
+        ZoneId defaultZoneId = ZoneId.systemDefault();
+
+        rentalDto.setLastUpdate(Instant.now());
+        rentalDto.setRentalDate(Date.from(localDate.atStartOfDay(defaultZoneId).toInstant()).toInstant());
+        Rental rental = mapper.toEntity(rentalDto);
+        rentalDao.update(rental);
+    }
+
     public RentalInventoryDto getInventoryByRental(int id) {
         RentalInventoryMapper rentalInventoryMapper = Mappers.getMapper(RentalInventoryMapper.class);
         return rentalInventoryMapper.toDto(rentalDao.getInventoryByRent(id));

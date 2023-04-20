@@ -15,6 +15,7 @@ gov\iti\jets\web\persistence\daos\interfaces\FilmCategoryDao.class
 gov\iti\jets\web\mapper\PaymentMapper.class
 gov\iti\jets\web\persistence\entity\FilmCategory.class
 gov\iti\jets\web\persistence\daos\interfaces\LanguageDao.class
+gov\iti\jets\web\restServices\Store.class
 gov\iti\jets\web\persistence\daos\interfaces\FilmTextDao.class
 gov\iti\jets\web\services\CityService.class
 gov\iti\jets\web\dto\StoreUpdateDto.class
@@ -33,6 +34,7 @@ gov\iti\jets\web\dto\AddressUpdateDto.class
 gov\iti\jets\web\persistence\entity\Customer.class
 gov\iti\jets\web\dto\CustomerUpdateDto.class
 gov\iti\jets\web\restServices\Actor.class
+gov\iti\jets\web\restServices\Staff.class
 gov\iti\jets\web\mapper\LanguageMapper.class
 gov\iti\jets\web\mapper\rental\RentalInventoryMapperImpl.class
 gov\iti\jets\web\services\StoreService.class
@@ -66,10 +68,12 @@ gov\iti\jets\web\mapper\CustomerMapperImpl.class
 gov\iti\jets\web\persistence\daos\interfaces\AddressDao.class
 gov\iti\jets\web\mapper\RentalMapperImpl.class
 gov\iti\jets\web\persistence\daos\interfaces\CustomerDao.class
+gov\iti\jets\web\restServices\Payment.class
 gov\iti\jets\web\dto\StaffDto.class
 gov\iti\jets\web\persistence\entity\Address.class
 gov\iti\jets\web\persistence\daos\interfaces\RentalDao.class
 gov\iti\jets\web\dto\AddressDto.class
+gov\iti\jets\web\restServices\Rental.class
 gov\iti\jets\web\services\RentalService.class
 gov\iti\jets\web\dto\StoreDto.class
 gov\iti\jets\web\mapper\AddressMapper.class
@@ -81,6 +85,7 @@ gov\iti\jets\web\services\PaymentService.class
 gov\iti\jets\web\mapper\CityMapper.class
 gov\iti\jets\web\mapper\CountryMapper.class
 gov\iti\jets\web\persistence\daos\implementation\AddressDaoImplement.class
+gov\iti\jets\web\restServices\Language.class
 gov\iti\jets\web\services\ActorServices.class
 gov\iti\jets\web\mapper\LanguageMapperImpl.class
 gov\iti\jets\web\persistence\entity\FilmCategoryId.class
@@ -133,3 +138,4 @@ gov\iti\jets\web\persistence\daos\implementation\CustomerDaoImplement.class
 gov\iti\jets\web\mapper\AddressUpdateMapper.class
 gov\iti\jets\web\mapper\AddressUpdateMapperImpl.class
 gov\iti\jets\web\dto\FilmDto.class
+gov\iti\jets\web\restServices\Inventory.class
